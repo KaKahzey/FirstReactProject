@@ -1,5 +1,7 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -10,7 +12,8 @@ export default function Home() {
       </Head>
 
       <main>
-        bite
+        <h1>bite</h1>
+        <Link href="/posts/first-post">bite?</Link>
       </main>
 
       <footer>
