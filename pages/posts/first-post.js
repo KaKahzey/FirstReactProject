@@ -1,20 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
-import Script from 'next/script'
 import { useEffect, useState } from 'react'
 
 
 export default function FirstPost() {
-    let kidContent = null
-    let DisplayKid = () =>{
-        if(kidContent === null) {
-            kidContent = <ChildComponent />
-        }
-        else {
-            kidContent = null
-        }
-    }
+    let [kidContent, setKidContent] = useState("")
     return (
         <div>
             <Head>
@@ -23,7 +13,16 @@ export default function FirstPost() {
             </Head>
             <h1>First Post</h1>
             <Link href="/">retour</Link>
-            <button onClick={DisplayKid}>display</button>
+            <button onClick={() => {
+                if(kidContent.type == ChildComponent){
+                    setKidContent(<SecondChildComponent />)
+                    
+                }
+                else{
+                    setKidContent(<ChildComponent />)
+                }
+                
+            }}>display</button>
             {kidContent}
         </div>
     )
@@ -37,4 +36,11 @@ function ChildComponent() {
     )
 }
 
-  
+function SecondChildComponent() {
+    return (
+        <div>
+            <h1>Chatte!</h1>
+        </div>
+    )
+}
+
