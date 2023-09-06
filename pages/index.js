@@ -13,7 +13,7 @@ export default function Home() {
       <main>
         <h1>bite</h1>
         <Link href="/posts/first-post">page de test</Link>
-        <Link href="/api">page api</Link>
+        <Link href="/posts/api">page api</Link>
       </main>
 
       <footer>

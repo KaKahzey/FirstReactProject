@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react'
 
 
 export default function Api() {
 
   const [pokemonList, setPokemonList] = useState([])
-
   useEffect(() =>{
 
     async function fetchAllPokemon() {
@@ -25,9 +25,10 @@ export default function Api() {
     fetchAllPokemon()
 
   }, [])
-
+  
   return (
     <div>
+      <Link href="/">retour home</Link>
       <h1>Liste des pokemons</h1>
       <ul>
         {pokemonList.map((pokemon, index) => (
